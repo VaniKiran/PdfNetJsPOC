@@ -84,29 +84,37 @@
             'event': 'documentLoaded',
             'data': ''
         }, '*');
-        //test();
+        test();
     });
-    //function test() {
-    //        var in_doc = yield PDFNet.PDFDoc.createFromURL("C:/temp/PeirsonPatterson.pdf");
-    //        in_doc.initSecurityHandler();
-    //        in_doc.lock();
+    function test() {
+        PDFNet.initialize().then(function () {
+            var doc = yield PDFNet.PDFDoc.create();         // creates an empty pdf document
+            doc.initSecurityHandler();                      // initializes security handler
+            doc.lock();
+            // insert user code after this point
+            var pgnum = yield doc.getPageCount();
+            alert("Test Complete! Your file has " + pgnum + " pages");
+        });
+        //var in_doc = yield PDFNet.PDFDoc.createFromURL("C:/temp/PeirsonPatterson.pdf");
+        //in_doc.initSecurityHandler();
+        //in_doc.lock();
 
-    //        console.log("PDF document initialized and locked");
+        //console.log("PDF document initialized and locked");
 
-    //        var page_count = yield in_doc.getPageCount();
-    //        console.log('page_count', page_count);
-    //        var pages_to_split = Math.min(4, page_count);
+        //var page_count = yield in_doc.getPageCount();
+        //console.log('page_count', page_count);
+        //var pages_to_split = Math.min(4, page_count);
 
-    //        // docStoreArray is used to leep track of the documents we have split up for later use.
-    //        var docStoreArray = [];
-    //        for (var i = 1; i <= pages_to_split; ++i) {
-    //            var new_doc = yield PDFNet.PDFDoc.create();
-    //            var filename = "newsletter_split_page_" + i + ".pdf";
-    //            new_doc.insertPages(0, in_doc, i, i, PDFNet.PDFDoc.InsertFlag.e_none);
-    //            docStoreArray[i - 1] = new_doc;
-    //            var docbuf = yield new_doc.saveMemoryBuffer(PDFNet.SDFDoc.SaveOptions.e_linearized);
-    //            saveBufferAsPDFDoc(docbuf, filename);
-    //            console.log("Result saved as " + filename);
-    //        }
-    //}
+        //// docStoreArray is used to leep track of the documents we have split up for later use.
+        //var docStoreArray = [];
+        //for (var i = 1; i <= pages_to_split; ++i) {
+        //    var new_doc = yield PDFNet.PDFDoc.create();
+        //    var filename = "newsletter_split_page_" + i + ".pdf";
+        //    new_doc.insertPages(0, in_doc, i, i, PDFNet.PDFDoc.InsertFlag.e_none);
+        //    docStoreArray[i - 1] = new_doc;
+        //    var docbuf = yield new_doc.saveMemoryBuffer(PDFNet.SDFDoc.SaveOptions.e_linearized);
+        //    saveBufferAsPDFDoc(docbuf, filename);
+        //    console.log("Result saved as " + filename);
+        //}
+    }
 })();
