@@ -1,0 +1,562 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{034F6EE8-CB5A-4261-AF0F-621E7CB34555}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PDFTronPOC</RootNamespace>
+    <AssemblyName>PDFTronPOC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="PDFTron-PdfNetJs\e2e\tsconfig.e2e.json" />
+    <Content Include="PDFTron-PdfNetJs\karma.conf.js" />
+    <Content Include="PDFTron-PdfNetJs\protractor.conf.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\.gitkeep" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\config.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\AnnotationEdit.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\AnnotationEdit.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\annotationHandler.php" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\BaseReaderControl.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\ControlUtils.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\CoreControls.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\CoreWorker.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\DecryptWorker.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\defaultScriptExtension.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\defaultStyleExtension.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\docViewer.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.Action.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.Dispatcher.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.GoTo.Dest.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.GoTo.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.Hide.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.JavaScript.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.Named.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.ResetForm.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.SubmitForm.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Actions.URI.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.Annotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.BoxControlHandle.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.BoxSelectionModel.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.ButtonWidgetAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.CalloutControlHandle.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.CalloutSelectionModel.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.CaretAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.CheckButtonWidgetAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.ChoiceWidgetAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.Color.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.ControlHandle.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.EllipseAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.Font.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.Forms.Field.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.Forms.FieldManager.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.Forms.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.FreeHandAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.FreeTextAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.FreeTextSelectionModel.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.HTMLAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.IPathAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.LineAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.LineControlHandle.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.LineSelectionModel.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.Link.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.ListWidgetAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.MarkupAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.PathControlHandle.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.PathSelectionModel.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.Point.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.PolygonAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.PolygonControlHandle.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.PolygonSelectionModel.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.PolylineAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.PopupAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.RadioButtonWidgetAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.Rect.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.RectangleAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.SelectionAlgorithm.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.SelectionModel.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.SignatureWidgetAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.StampAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.StickyAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.TextHighlightAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.TextMarkupAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.TextSelectionModel.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.TextSquigglyAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.TextStrikeoutAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.TextUnderlineAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.TextWidgetAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.WidgetAnnotation.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\Annotations.WidgetFlags.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\BaseReaderControl.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\classes.list.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\CoreControls.AnnotationManager.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\CoreControls.Bookmark.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\CoreControls.DisplayMode.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\CoreControls.DisplayModeManager.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\CoreControls.Document.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\CoreControls.DocumentViewer.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\CoreControls.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\img\glyphicons-halflings-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\img\glyphicons-halflings.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\index.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\namespaces.list.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.AndroidContentPartRetriever.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.AzurePartRetriever.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.ExternalPdfPartRetriever.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.HttpPartRetriever.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.IOSPartRetriever.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.LocalPartRetriever.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.LocalPdfPartRetriever.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.StreamingPartRetriever.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PartRetrievers.WinRTPartRetriever.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.Action.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.ActionParameter.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.Annot.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.AnnotBorderStyle.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.AttrObj.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.Bookmark.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.CaretAnnot.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.ChunkRenderer.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.CircleAnnot.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.ClassMap.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.ColorPt.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.ColorSpace.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.ContentItem.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\PDFNet.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\docstrap.lib.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\fulltext-search-ui.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\fulltext-search.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\lunr.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\prettify\Apache-License-2.0.txt" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\prettify\jquery.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\prettify\lang-css.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\prettify\prettify.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\sunlight.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\scripts\toc.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\darkstrap.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\prettify-tomorrow.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.cerulean.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.cosmo.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.cyborg.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.darkly.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.darkstrap.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.dibs-bootstrap.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.flatly.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.journal.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.lumen.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.paper.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.readable.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.sandstone.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.simplex.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.slate.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.spacelab.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.superhero.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.united.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\site.yeti.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\sunlight.dark.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\styles\sunlight.default.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\Autolinker.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\context.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\context.standalone.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\drop\css\drop-theme-arrows-bounce-dark.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\drop\css\drop-theme-arrows-bounce.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\drop\css\drop-theme-arrows.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\drop\css\drop-theme-basic.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\drop\css\drop-theme-hubspot-popovers.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\drop\css\extras\drop-twitter-bootstrap.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\drop\drop.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\drop\drop.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\drop\js\drop.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\fastclick.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\FileSaver.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\i18next-1.6.0.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\glyphicons_072_bookmark.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\loading.gif" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\treeview-default-line.gif" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\treeview-default.gif" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\ui-icons_222222_256x240.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\ui-icons_454545_256x240.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\images\ui-icons_888888_256x240.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-3.2.1.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-migrate-3.0.0.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\jquery-ui-1.11.1.custom.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\jquery-ui-1.11.1.custom.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_65_CBE6EF_1x400.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-icons_222222_256x240.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-icons_454545_256x240.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-icons_888888_256x240.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\jquery-ui-1.11.1.custom.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery-ui\themes\cloud\jquery-ui-1.11.1.custom.min.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.cookie.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.doubletap.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.flexibleArea.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\ajax-loader.gif" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\action-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\action-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\alert-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\alert-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-d-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-d-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-l-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-l-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-r-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-r-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-u-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\arrow-u-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\audio-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\audio-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\back-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\back-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\bars-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\bars-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\bullets-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\bullets-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\calendar-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\calendar-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\camera-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\camera-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\carat-d-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\carat-d-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\carat-l-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\carat-l-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\carat-r-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\carat-r-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\carat-u-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\carat-u-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\check-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\check-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\clock-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\clock-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\cloud-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\cloud-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\comment-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\comment-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\delete-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\delete-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\edit-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\edit-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\eye-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\eye-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\forbidden-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\forbidden-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\forward-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\forward-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\gear-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\gear-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\grid-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\grid-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\heart-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\heart-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\home-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\home-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\info-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\info-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\location-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\location-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\lock-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\lock-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\mail-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\mail-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\minus-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\minus-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\navigation-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\navigation-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\phone-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\phone-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\plus-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\plus-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\power-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\power-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\recycle-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\recycle-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\refresh-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\refresh-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\search-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\search-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\shop-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\shop-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\star-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\star-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\tag-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\tag-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\user-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\user-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\video-black.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\images\icons-png\video-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\jquery.mobile-1.4.4.min.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\jquery.mobile-1.4.4.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\jquery.mobile.custom.structure.min.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\jquery.mobile.custom.theme.min.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mobile\jquery.mobile.icons-1.4.4.min.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.mousewheel.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.treeview.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\jquery.treeview.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\modernizr.custom.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\moment.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\touchr.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\turn.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\external\xdomain.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\formDataHandler.php" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\KeyRequest.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\legal.txt" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\MobileReaderControl.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\MobileReaderControl.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\MobileReaderControl.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\mobileSetup.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\NotesPanel.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\office\WebOfficeWorker.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\PDFNet.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\pdfnet.res" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\PDFNetCFull.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\PDFReaderControl.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\PDFReaderControl.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\PDFworker.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\ResizableWorker.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\ReaderControl.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\ReaderControl.html" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\ReaderControl.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\ReaderControlConfig.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\1px.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\checkmark.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\color_none.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\jstree.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\jstree.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default-dark\32px.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default-dark\40px.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default-dark\style.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default-dark\style.min.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default-dark\throbber.gif" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default\32px.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default\40px.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default\style.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default\style.min.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dist\themes\default\throbber.gif" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dragginghand.cur" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\dragginghand.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\hand.cur" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\hand.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\css\controls.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\css\customicons.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\css\glyphicons.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\css\style.css" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\fonts\custom.svg" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\fonts\glyphicons-regular.svg" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\images\glyphicons-white.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\images\glyphicons-white.svg" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\images\glyphicons.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\images\glyphicons.svg" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icon_credits.txt" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\minus.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\minus_circle.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\ok_circle.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\plus.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\user.png" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\WebViewerInterface.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\WebViewer.js" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\WebViewer.min.js" />
+    <Content Include="PDFTron-PdfNetJs\src\tsconfig.app.json" />
+    <Content Include="PDFTron-PdfNetJs\src\tsconfig.spec.json" />
+    <Content Include="PDFTron-PdfNetJs\.angular-cli.json" />
+    <Content Include="PDFTron-PdfNetJs\.editorconfig" />
+    <Content Include="PDFTron-PdfNetJs\.gitignore" />
+    <Content Include="PDFTron-PdfNetJs\package.json" />
+    <Content Include="PDFTron-PdfNetJs\README.md" />
+    <Content Include="PDFTron-PdfNetJs\tsconfig.json" />
+    <Content Include="PDFTron-PdfNetJs\tslint.json" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\.htaccess" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\doc\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\office\WebOfficeWorker.js.mem" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\office\WebOfficeWorker.nmf" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\office\WebOfficeWorker.pexe" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\office\WebOfficeWorkerSubzero.nmf" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\PDFNetCFull.js.mem" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\PDFWorker.nmf" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\PDFWorker.pexe" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\PDFWorkerSubzero.nmf" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\SimpleWorker.nmf" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\pdf\SimpleWorker.pexe" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\i18n\translation-de.json" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\i18n\translation-en.json" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\i18n\translation-es.json" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\i18n\translation-fr.json" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\i18n\translation-gl.json" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\i18n\translation-pt_br.json" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\i18n\translation-ru.json" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\fonts\custom.eot" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\fonts\custom.ttf" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\fonts\custom.woff" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\fonts\glyphicons-regular.eot" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\fonts\glyphicons-regular.otf" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\fonts\glyphicons-regular.ttf" />
+    <Content Include="PDFTron-PdfNetJs\src\assets\vendor\webviewer\html5\Resources\icons\fonts\glyphicons-regular.woff" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PDFTron-PdfNetJs\src\app\app.component.css" />
+    <Content Include="PDFTron-PdfNetJs\src\app\app.component.html" />
+    <Content Include="PDFTron-PdfNetJs\src\favicon.ico" />
+    <Content Include="PDFTron-PdfNetJs\src\index.html" />
+    <Content Include="PDFTron-PdfNetJs\src\styles.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\e2e\app.po.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\app\app.component.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\app\app.module.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\app\models\document-file.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\app\models\document-metadata.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\app\models\local-physical-file.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\app\services\webviewer.service.spec.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\app\services\webviewer.service.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\environments\environment.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\main.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\polyfills.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\test.ts" />
+    <TypeScriptCompile Include="PDFTron-PdfNetJs\src\typings.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PDFTron-PdfNetJs\src\assets\fonts\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61917</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61917/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
