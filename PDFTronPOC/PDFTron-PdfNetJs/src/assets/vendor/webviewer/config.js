@@ -88,12 +88,22 @@
     });
     function test() {
         PDFNet.initialize().then(function () {
-            var doc = yield PDFNet.PDFDoc.create();         // creates an empty pdf document
-            doc.initSecurityHandler();                      // initializes security handler
-            doc.lock();
-            // insert user code after this point
-            var pgnum = yield doc.getPageCount();
-            alert("Test Complete! Your file has " + pgnum + " pages");
+            var newDoc = yield PDFNet.PDFDoc.create();         // creates an empty pdf document
+            newDoc.initSecurityHandler();                      // initializes security handler
+            newDoc.lock();
+            var doc = readerControl.docViewer.getDocument();
+            doc.getPDFDoc().then(function (pdfDoc) {
+                var pgnum = yield doc.getPageCount();
+                newDoc.insertPages(1, doc1, 1, pgnum);
+                docbuf = yield newDoc.saveMemoryBuffer(PDFNet.SDFDoc.SaveOptions.e_linearized);
+                //2.  Create a blob from Uint8Array:
+                var blob = new Blob([docbuf]);
+                //3. Create an object URL from blob:
+                var objectUrl = URL.createObjectURL(blob);
+                //4. Call loadDocument on the objectURL
+                readerControl.loadDocument(objectUrl, {});
+            });
+            
         });
         //var in_doc = yield PDFNet.PDFDoc.createFromURL("C:/temp/PeirsonPatterson.pdf");
         //in_doc.initSecurityHandler();
